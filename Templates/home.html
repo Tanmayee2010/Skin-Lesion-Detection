@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Skin Disease Prediction{% endblock %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="imageInput">Upload Image:</label>
+        <input type="file" id="imageInput" name="image" accept="image/*" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+  <!-- Show Uploaded Image & Prediction -->
+{% if uploaded_file_url %}
+<div class="result-section" style="display: flex; justify-content: center; align-items: flex-start; gap: 300px; margin-top: 40px; flex-wrap: wrap;">
+<!-- Uploaded Image with Black Border -->
+<div style="border: 2px solid black; border-radius: 10px; padding: 10px; margin: 10px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Times New Roman', Times, serif; font-size: 28px; font-weight: bold;">
+        <h3 style="font-weight: bold;">Uploaded Image:</h3>
+        <img src="{{ uploaded_file_url }}" alt="Uploaded Image" width="300" style="border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+    </div>
+</div>
+
+<!-- Prediction with Black Border -->
+<div style="border: 2px solid black; border-radius: 10px; padding: 10px; margin: 10px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Times New Roman', Times, serif; font-size: 28px; font-weight: bold;">
+        <h3 style="margin-bottom: 10px;font-weight: bold;">Prediction:</h3>
+        <p>{{ prediction }}</p>
+    </div>
+</div>
+
+    
+</div>
+
+<!-- Show PDF Download Button Centered -->
+{% if prediction %}
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/media/reports/report.pdf" download class="btn btn-success">Download PDF Report</a>
+    </div>
+{% endif %}
+{% endif %}
+
+    <!-- JavaScript for Image Preview -->
+    <script>
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById("previewImage");
+                output.src = reader.result;
+                document.getElementById("imagePreviewSection").style.display = "block";
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+
+{% endblock %}
+

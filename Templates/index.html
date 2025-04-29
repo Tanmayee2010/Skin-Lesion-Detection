@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Skin Lesion Description -->
+    <div class="text-white p-4 mb-4 rounded" style="background-color: rgba(0, 0, 0, 0.5); font-family: 'Times New Roman', Times, serif;">
+        <h2>What is a Skin Lesion?</h2>
+        <p>
+            A skin lesion is any abnormal change in the skin's appearance, such as a growth, sore, rash, or discoloration.
+            These can result from infections, injuries, or conditions like skin cancer.
+            Common types include moles, warts, cysts, and rashes. While most are harmless,
+            it's important to monitor for any changes that could indicate a serious condition.
+        </p>
+    </div>
+
+    <!-- Skin Lesion Types -->
+    <div class="text-white p-4 mb-4 rounded" style="background-color: rgba(0, 0, 0, 0.5); font-family: 'Times New Roman', Times, serif;">
+        <h2>Skin Lesion Types:</h2>
+        <ul>
+            <li><strong>Actinic Keratoses (akiec):</strong> Precancerous skin lesion caused by sun damage.</li>
+            <li><strong>Basal Cell Carcinoma (bcc):</strong> A type of skin cancer that originates in the basal cells.</li>
+            <li><strong>Benign Keratosis (bkl):</strong> Non-cancerous lesions often associated with aging.</li>
+            <li><strong>Dermatofibroma (df):</strong> Benign tumors of the skin, often small and firm.</li>
+            <li><strong>Melanoma (mel):</strong> A serious type of skin cancer that develops in melanocytes.</li>
+            <li><strong>Melanocytic Nevus (nv):</strong> Commonly known as moles, generally benign.</li>
+        </ul>
+    </div>
+
+<!-- Add spacing below carousel -->
+<div class="my-5"></div>
+
+<!-- Carousel Section with Grey Transparent Background -->
+<div class="p-4 rounded mb-5" style="background-color: rgba(0, 0, 0, 0.5);">
+
+    <!-- Title in black and centered -->
+    <h3 class="text-center text-white mb-4" style="font-family: 'Times New Roman', Times, serif;">
+         Skin Lesions Types
+    </h3>
+
+    <div id="lesionCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div>
+                        <img src="{% static 'images/akiec.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="akiec">
+                        <p class="mt-2 text-white fw-medium">Actinic Keratoses (akiec)</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'images/bcc.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="bcc">
+                        <p class="mt-2 text-white fw-medium">Basal Cell Carcinoma (bcc)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div>
+                        <img src="{% static 'images/bkl.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="bkl">
+                        <p class="mt-2 text-white fw-medium">Benign Keratosis (bkl)</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'images/df.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="df">
+                        <p class="mt-2 text-white fw-medium">Dermatofibroma (df)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div>
+                        <img src="{% static 'images/mel.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="mel">
+                        <p class="mt-2 text-white fw-medium">Melanoma (mel)</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'images/nv.jpg' %}" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" alt="nv">
+                        <p class="mt-2 text-white fw-medium">Melanocytic Nevus (nv)</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous Button (outside) -->
+<button class="btn btn-outline-light position-absolute top-50 start-0 translate-middle-y z-3" type="button"
+data-bs-target="#lesionCarousel" data-bs-slide="prev" style="margin-left: -10px;">
+&#10094;
+</button>
+
+<!-- Next Button (outside) -->
+<button class="btn btn-outline-light position-absolute top-50 end-0 translate-middle-y z-3" type="button"
+data-bs-target="#lesionCarousel" data-bs-slide="next" style="margin-right: -10px;">
+&#10095;
+</button>
+
+    </div>
+</div>
+
+
+
+   
+    <!-- Symptoms -->
+    <div class="text-white p-4 mb-4 rounded" style="background-color: rgba(0, 0, 0, 0.5); font-family: 'Times New Roman', Times, serif;">
+        <h2>Symptoms of Skin Lesions</h2>
+        <ul>
+            <li>Change in size, color, or shape.</li>
+            <li>Itching, burning, or pain.</li>
+            <li>Bleeding or crusting of the lesion.</li>
+            <li>Sudden appearance of multiple lesions.</li>
+        </ul>
+    </div>
+
+    <!-- Prevention -->
+    <div class="text-white p-4 mb-4 rounded" style="background-color: rgba(0, 0, 0, 0.5); font-family: 'Times New Roman', Times, serif;">
+        <h2>Prevention and Care</h2>
+        <ul>
+            <li><strong>Sun Protection:</strong> Use sunscreen and wear protective clothing.</li>
+            <li><strong>Healthy Habits:</strong> Maintain good hygiene and a balanced diet.</li>
+            <li><strong>Routine Checkups:</strong> Monitor changes in skin lesions and consult a dermatologist if abnormalities occur.</li>
+            <li><strong>Avoid Irritants:</strong> Reduce exposure to chemicals or allergens.</li>
+        </ul>
+    </div>
+
+</div>
+{% endblock %}

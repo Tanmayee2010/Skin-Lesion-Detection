@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Skin Precaution Advisory{% endblock %}
+
+{% block content %}
+
+<section class="advisory-section">
+    <form method="POST" class="grey-box advisory-form">
+        {% csrf_token %}
+        <div class="form-group d-flex align-items-center" style="gap: 15px; font-size: 1.2rem;font-family: 'Times New Roman', Times, serif;">
+            <label for="id_skin_condition" class="mb-0" style="white-space: nowrap; font-weight: bold;">Select Skin Disease:</label>
+            {{ form.skin_condition }}
+        </div>
+        <div style="margin-top: 20px;font-family: 'Times New Roman', Times, serif;">
+            <button type="submit" class="advisory-button" style="font-size: 1.1rem; padding: 10px 20px;">Get Precautionary Advice</button>
+        </div>
+    </form>
+
+    {% if recommendation_message %}
+        <div class="grey-box recommendation-message" style="font-family: 'Times New Roman', Times, serif;">
+            <h2>Precautionary Advice:</h2>
+            <pre>{{ recommendation_message }}</pre>
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Prediction Box -->
+    <div class="text-dark p-4 mb-4 rounded" style="border: 2px solid black; background-color: rgba(255, 255, 255, 0.8);">
+        <h2 class="text-center">Skin Lesion Prediction Result</h2>
+        
+        <div class="row mt-4">
+
+            <!-- Image Section -->
+            <div class="col-md-6 text-center">
+                <div style="border: 2px solid black; padding: 15px; border-radius: 10px;">
+                    <h4>Uploaded Image:</h4>
+                    {% if image_url %}
+                        <img src="{{ image_url }}" alt="Uploaded Image" style="max-width: 100%; height: auto; border-radius: 10px;">
+                    {% else %}
+                        <p>No image uploaded.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Prediction Section -->
+            <div class="col-md-6 text-center">
+                <div style="border: 2px solid black; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <h4>Prediction:</h4>
+                    <p style="font-size: 20px; font-weight: bold;">{{ prediction }}</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Download Button -->
+        <div class="text-center mt-4">
+            <a href="{{ pdf_url }}" class="btn btn-success">Download PDF Report</a>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-2">
+            <a href="/" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

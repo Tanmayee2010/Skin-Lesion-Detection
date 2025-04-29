@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Frequently Asked Questions (FAQ){% endblock %}
+
+{% block content %}
+<section class="faq-section">
+    <div class="container mt-0">
+    <div class="info-box">
+        <h2>1. What is the Skin Disease Detection System?</h2>
+        <p>The Skin Disease Detection System uses machine learning models to classify skin lesions and identify different types of skin diseases. This system provides a web interface where users can get recommendations for skincare based on the skin condition they select. The model is trained using the HAM10000 dataset, which contains labeled images of various skin conditions, and the system offers advice based on these conditions.</p>
+    </div> 
+
+    <div class="info-box">    
+            <h2>2. How do I use the system?</h2>
+        <p>To use the system, you can select a skin condition from the available options in the dropdown list. Once selected, click the “Get Precautionary Advice” button to receive recommendations on how to take care of the skin condition. The system will provide advice on the appropriate treatments, skincare routines, and precautions based on the selected skin condition.</p>
+    </div> 
+
+    <div class="info-box">        
+        <h2>3. How can I get more information about my skin condition?</h2>
+        <p>For more in-depth information, we recommend checking reliable medical websites such as:</p>
+        <ul>
+            <li><a href="https://www.aad.org/" target="_blank">American Academy of Dermatology</a></li>
+            <li><a href="https://www.skincancer.org/" target="_blank">Skin Cancer Foundation</a></li>
+            <li>Consult a dermatologist for professional advice and personalized treatment.</li>
+        </ul>
+    </div> 
+
+    <div class="info-box">
+                <h2>4. Why should I choose my skin condition from the list instead of uploading an image?</h2>
+        <p>This system currently focuses on providing advisory recommendations for different skin conditions, which are based on common medical knowledge for the selected conditions. By selecting a skin condition from the list, you will receive personalized care advice and recommendations without the need to upload images. This feature makes it simple and quick to access skincare tips and precautionary measures.</p>
+    </div> 
+
+    <div class="info-box">
+                <h2>5. Can I get treatment recommendations through this system?</h2>
+        <p>While the system provides precautionary and care recommendations, it is not intended to offer detailed treatment plans. If you need specific treatment options, please consult a healthcare professional who can evaluate your skin condition and recommend appropriate treatments.</p>
+    </div> 
+
+    <div class="info-box">
+                <h2>6. Is the system free to use?</h2>
+        <p>Yes, the Skin Disease Detection and Advisory system is completely free to use. It provides access to basic skin condition recommendations based on general guidelines. However, we recommend seeking a professional consultation for medical concerns.</p>
+    </div> 
+
+    <div class="info-box">
+                <h2>7. Can I contact a dermatologist through this system?</h2>
+        <p>Currently, the system does not support direct contact with dermatologists. However, you can use the recommendations to help guide your next steps, such as scheduling a visit with a healthcare provider. If you need a dermatologist, we encourage you to use online directories or health services to find one near you.</p>
+    </div> 
+
+    <div class="info-box">
+                <h2>8. What are the different skin conditions available in the system?</h2>
+        <p>The system offers advice for the following skin conditions:</p>
+        <ul>
+            <li><strong>Melanoma</strong>: A type of skin cancer that may appear as a new or changing mole.</li>
+            <li><strong>Basal Cell Carcinoma (BCC)</strong>: A common form of skin cancer that often appears as a waxy or shiny bump.</li>
+            <li><strong>Actinic Keratosis (AK)</strong>: Pre-cancerous skin growths that develop in areas exposed to the sun.</li>
+            <li><strong>Dermatofibroma (DF)</strong>: A non-cancerous skin tumor that appears as a small, raised, brown growth.</li>
+            <li><strong>Benign Nevi (NV)</strong>: Commonly known as moles, these are usually harmless but should be monitored for changes.</li>
+            <li><strong>Benign Keratosis (BKL)</strong>: Non-cancerous growths on the skin often associated with aging.</li>
+            <li><strong>Vascular Lesions (VASC)</strong>: Skin conditions involving blood vessels, such as port-wine stains or spider veins.</li>
+        </ul>
+    </div> 
+
+</section>
+{% endblock %}

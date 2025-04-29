@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to bottom, #dff6ff, #8dc6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 380px;
+            font-size: 28px;
+            color:white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: white;
+            font-size: 28px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            color:white;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: border-color 0.3s ease;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+        font-family: 'Times New Roman', Times, serif;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            color: red;
+            font-size: 14px;
+        }
+
+        .signup-link {
+            margin-top: 15px;
+            display: block;
+            font-size: 20px;
+            color:white;
+        }
+
+        .signup-link a {
+            color:rgb(239, 243, 248);
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            <span>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></span>
+        </div>
+    </div>
+</body>
+</html>
